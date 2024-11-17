@@ -17,6 +17,7 @@
 	<!--Load and launch the joint trajectory controller-->
 	<rosparam file ="$(find ROBOT_URDF)/config/joint_trajectory_controller.yaml"
 	command="load"/>
+	<rosparam file="$(find ROBOT_URDF)/config/gazebo_ros_control_params.yaml" command="load"/>
 	<node name= "controller_spawner" pkg= "controller_manager" type="spawner" respawn="false" output="screen" args="joint_state_controller robot_arm_controller hand_ee_controller"/>
 	<!-- Robot State Publisher for TF of each joint: publishes all the current states of the joint, then RViz
 	can visualize -->
